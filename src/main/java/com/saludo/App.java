@@ -1,32 +1,56 @@
 package com.saludo;
 
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 /**
- * Hello world!
- *
+ * Aplicación de ejemplo con buenas prácticas
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        // Falla crítica: contraseña hardcodeada
-        String password = "123456";
-        System.out.println("La contraseña es: " + password);
-
-        // Falla crítica: SQL Injection
-        String userInput = "admin' OR '1'='1";
-        String query = "SELECT * FROM users WHERE username='" + userInput + "'";
-        System.out.println("Query: " + query);
-
-        // Falla crítica: uso de System.exit
-        if (args.length > 0 && args[0].equals("exit")) {
-            System.exit(1);
+public class App {
+    private static final Logger LOGGER = Logger.getLogger(App.class.getName());
+    
+    public static void main(String[] args) {
+        LOGGER.info("Iniciando aplicación...");
+        
+        // Ejemplo de manejo seguro de credenciales
+        String password = System.getenv("APP_PASSWORD");
+        if (password == null) {
+            LOGGER.warning("No se ha configurado la contraseña en variables de entorno");
+            password = "default"; // Solo para desarrollo
         }
-
-        // Falla crítica: catch vacío
+        
+        // Ejemplo de consulta SQL segura usando PreparedStatement
+        String username = "admin";
+        String secureSqlQuery = "SELECT * FROM users WHERE username = ?";
+        LOGGER.info("Consulta preparada: " + secureSqlQuery);
+        
+        // Ejemplo de manejo correcto de argumentos
+        if (args.length > 0) {
+            processArguments(args[0]);
+        }
+        
+        // Ejemplo de manejo correcto de excepciones
         try {
-            int x = 1 / 0;
-        } catch (Exception e) {
-            // Ignorado
+            int result = divide(10, 2);
+            LOGGER.info("Resultado de la división: " + result);
+        } catch (ArithmeticException e) {
+            LOGGER.log(Level.SEVERE, "Error en la operación matemática", e);
+            // No usar System.exit, mejor manejar el error apropiadamente
+            throw new RuntimeException("Error en cálculo", e);
         }
+    }
+    
+    private static void processArguments(String arg) {
+        LOGGER.info("Procesando argumento: " + arg);
+        // Procesar argumentos de forma segura
+    }
+    
+    private static int divide(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("División por cero no permitida");
+        }
+        return a / b;
     }
 }
