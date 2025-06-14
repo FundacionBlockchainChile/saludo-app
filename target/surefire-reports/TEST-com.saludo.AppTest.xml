@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.saludo.AppTest" time="0.007" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.saludo.AppTest" time="0.015" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
+    <property name="sonar.login" value="sqa_c8bd5459e9f6c4c5d84abdc1b823290c29585cd7"/>
+    <property name="sonar.host.url" value="http://localhost:9000"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.class.path" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/test-classes:/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/classes:/Users/sergiocastrofaune/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
@@ -12,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CL"/>
     <property name="sun.boot.library.path" value="/Users/sergiocastrofaune/.sdkman/candidates/java/17.0.12-oracle/lib"/>
-    <property name="sun.java.command" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/surefire/surefirebooter-20250612221225509_3.jar /Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/surefire 2025-06-12T22-12-25_417-jvmRun1 surefire-20250612221225509_1tmp surefire_0-20250612221225509_2tmp"/>
+    <property name="sun.java.command" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/surefire/surefirebooter-20250612225616841_3.jar /Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/surefire 2025-06-12T22-56-16_780-jvmRun1 surefire-20250612225616841_1tmp surefire_0-20250612225616841_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/test-classes:/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/classes:/Users/sergiocastrofaune/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
@@ -26,9 +28,9 @@
     <property name="basedir" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/surefire/surefirebooter-20250612221225509_3.jar"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/Users/sergiocastrofaune/Projects/DevOps/Jenkins/saludo-app/target/surefire/surefirebooter-20250612225616841_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -46,6 +48,7 @@
     <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
+    <property name="sonar.projectKey" value="saludo-app"/>
     <property name="java.library.path" value="/Users/sergiocastrofaune/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -54,5 +57,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testApp" classname="com.saludo.AppTest" time="0.001"/>
+  <testcase name="testApp" classname="com.saludo.AppTest" time="0.002"/>
 </testsuite>
