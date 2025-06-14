@@ -25,7 +25,12 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeLocal') {
-                    sh 'mvn sonar:sonar -Dsonar.projectKey=saludo-app -Dsonar.host.url=http://35.171.234.181:9000 -Dsonar.login=sqa_c8bd5459e9f6c4c5d84abdc1b823290c29585cd7'
+                    sh '''
+                        mvn sonar:sonar \
+                        -Dsonar.projectKey=saludo-app \
+                        -Dsonar.host.url=http://35.171.234.181:9000 \
+                        -Dsonar.token=squ_eb4563b34bc4a1ad517b73f66693ba7ba59ad827
+                    '''
                 }
             }
         }
